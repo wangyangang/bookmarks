@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
-    'django_extensions'
+    'django_extensions',
+    'images.apps.ImagesConfig'
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,8 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '948419448195-9l4illa51ree495p5gcs1vfppe1cg7qa.apps.googleusercontent.com'  # Google Client ID
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Google Client Secret
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)

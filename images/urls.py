@@ -1,6 +1,10 @@
-"""
-@author:  wangyangang
-@contact: wangyangang@wangyangang.com
-@site:    https://wangyangang.com
-@time:   8/13/23 - 10:58 PM
-"""
+from django.urls import path
+
+from . import views
+
+app_name = 'images'
+
+urlpatterns = [
+    path('create/', views.image_create, name='create'),
+    path('detail/<int:id>/<slug:slug>/', views.image_detail, name='detail'),
+]
